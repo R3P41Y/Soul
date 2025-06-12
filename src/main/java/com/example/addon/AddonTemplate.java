@@ -26,7 +26,7 @@ public class AddonTemplate extends MeteorAddon {
 
         // Register modules here
         Modules.get().add(new ModuleExample());
-        Modules.get().add(new Heart());  // <--- Add your Heart module here
+        Modules.get().add(new Rtpauto());  // <--- Add your Heart module here
 
         // Commands
         Commands.add(new CommandExample());
