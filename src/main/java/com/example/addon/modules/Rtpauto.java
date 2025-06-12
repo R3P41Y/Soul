@@ -2,13 +2,11 @@ package dev.yourname.stashfinder;
 
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.systems.modules.Module;
-import meteordevelopment.meteorclient.systems.modules.Modules;
 import meteordevelopment.meteorclient.utils.player.ChatUtils;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 
@@ -44,7 +42,7 @@ public class StashFinderModule extends Module {
 
         switch (state) {
             case RTPING -> {
-                mc.player.networkHandler.sendChatCommand("rtp");
+                ChatUtils.sendPlayerMsg("rtp");
                 state = State.MINING;
                 startMinePos = player.getBlockPos();
             }
@@ -62,7 +60,7 @@ public class StashFinderModule extends Module {
             }
 
             case CHECKING -> {
-                if (foundStashNearby(mc.player.getBlockPos())) {
+                if (foundStashNearby(player.getBlockPos())) {
                     ChatUtils.info("STASH FOUND!");
                     mc.player.networkHandler.disconnect(mc.player.getName(), "STASH FOUND!");
                     this.toggle(); // disables module after disconnect
