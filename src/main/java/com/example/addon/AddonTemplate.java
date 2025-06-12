@@ -3,7 +3,8 @@ package com.example.addon;
 import com.example.addon.commands.CommandExample;
 import com.example.addon.hud.HudExample;
 import com.example.addon.modules.Spawneresp;
-import com.example.addon.modules.Rtpauto;  // <--- Import your Heart module here
+import com.example.addon.modules.Rtpauto;
+import com.example.addon.modules.Pay;// <--- Import your Heart module here
 import com.mojang.logging.LogUtils;
 import meteordevelopment.meteorclient.addons.GithubRepo;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
@@ -26,7 +27,8 @@ public class AddonTemplate extends MeteorAddon {
 
         // Register modules here
         Modules.get().add(new Spawneresp());
-        Modules.get().add(new Rtpauto());  // <--- Add your Heart module here
+        Modules.get().add(new Rtpauto());
+        Modules.get().add(new Pay());// <--- Add your Heart module here
 
         // Commands
         Commands.add(new CommandExample());
