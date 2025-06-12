@@ -3,7 +3,7 @@ package com.example.addon;
 import com.example.addon.commands.CommandExample;
 import com.example.addon.hud.HudExample;
 import com.example.addon.modules.ModuleExample;
-import com.example.addon.modules.Heart;  // <--- Import your Heart module here
+import com.example.addon.modules.Rtpauto;  // <--- Import your Heart module here
 import com.mojang.logging.LogUtils;
 import meteordevelopment.meteorclient.addons.GithubRepo;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
